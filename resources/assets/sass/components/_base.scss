@@ -1,0 +1,50 @@
+body{
+  font-family:OpenSans, sans-serif;
+}
+h1{
+  font-family: 'Montserrat', sans-serif;
+  font-weight:700;
+  color:black;
+}
+
+//Navbar
+.navbar-default{
+  position:absolute;
+  width:100%;
+  background:transparent;
+  border:none;
+  color:$white;
+  .navbar-nav{
+    .dropdown-menu{
+      li a{
+        color:#333333;
+      }
+    }
+    li{
+      a{
+        color:$white;
+      }
+    }
+    .open{
+      a{
+        background:transparent;
+      }
+    }
+  }
+  .navbar-brand{
+    color:$white;
+  }
+}
+
+.content{
+  @include flexbox;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+  background:#e5e5e5;
+}
+.inner{
+  @include flexbox;
+  justify-content: center;
+  align-items: center;
+}
