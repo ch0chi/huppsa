@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+ * Google Login Callback Routes
+ */
+Route::get('/login/google','Auth\LoginController@redirectToGoogle');
+Route::get('/callback/google','Auth\LoginController@handleGoogleCallback');
