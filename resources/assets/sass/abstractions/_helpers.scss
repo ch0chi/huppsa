@@ -1,0 +1,29 @@
+%content{
+  @include flexbox;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
+%inner{
+  @include flexbox;
+  justify-content: center;
+  align-items: center;
+}
+%flx-column{
+  flex-direction:column;
+}
+%flx-row{
+  flex-direction:row;
+}
+.content{
+  @extend %content;
+}
+.inner{
+  @extend %inner;
+}
+.flx-column{
+  @extend %flx-column;
+}
+.flx-row{
+  @extend %flx-row;
+}

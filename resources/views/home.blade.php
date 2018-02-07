@@ -23,7 +23,6 @@
 
 <div class="content">
     <div class="inner">
-        <a href="{{url('/login/google')}}">Sign in with google</a>
         <h1>Huppsa Decks</h1>
     </div>
 </div>
