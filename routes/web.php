@@ -22,3 +22,14 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::get('/login/google','Auth\LoginController@redirectToGoogle');
 Route::get('/callback/google','Auth\LoginController@handleGoogleCallback');
+
+/*
+ * Administrator Routes
+ */
+
+Route::get('/admin/admin','AdminController@show');
+
+/*
+ * Card Routes
+ */
+Route::resource('admin/manageCards','Admin\ManageCardController');
