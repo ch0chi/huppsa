@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Card;
+use App\Libraries\Upload;
 class ManageCardController extends Controller
 {
 
@@ -19,7 +20,9 @@ class ManageCardController extends Controller
      */
     public function index()
     {
-        return view('/admin/manage_cards');
+      $card = new Card();
+      $cards = $card->getAll();
+        return view('/admin/manage_cards',compact('cards'));
     }
 
     /**
@@ -40,7 +43,24 @@ class ManageCardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+          'card_image' => 'image|mimes:jpeg,jpg,bmp,png,gif|max:999999',
+          'card_name' => 'required'
+        ]);
+
+        $imgHandler = new Upload();
+
+
+        $newCard = Card::create([
+          'name' => $request->input('card_name'),
+          'image' => $imgHandler->uploadImage($request->file('card_image'),'cards'),
+          'info' => $request->input('card_info')
+        ]);
+
+        \Session::flash('flash_message','Card added!');
+
+        return redirect()->action('Admin\ManageCardController@index');
+
     }
 
     /**
