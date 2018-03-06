@@ -1,0 +1,11 @@
+/*Admin View Cards*/
+.card{
+  @include flexbox();
+  justify-content: center;
+  align-items:center;
+  flex-direction:column;
+  img{
+    width:calc(100%/2);
+    height:auto;
+  }
+}

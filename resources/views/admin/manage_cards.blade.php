@@ -6,10 +6,13 @@
         <div class="inner flx-column">
             <h1>Manage Cards</h1>
             <div class="list-cards">
-                @foreach($cards as $card)
-                    <h1>{{$card->name}}</h1>
-                    <img src="{{'public/'. Storage::get($card->image)}}">
-                @endforeach
+                <div class="card">
+                    @foreach($cards as $card)
+                        <h1>{{$card->name}}</h1>
+                        <img src="{{url('/storage/'.$card->image)}}">
+                    @endforeach
+                </div>
+
             </div>
 
             <div class="add-card">
