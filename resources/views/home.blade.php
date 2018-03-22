@@ -22,8 +22,14 @@
 {{--</div>--}}
 
 <div class="content">
-    <div class="inner">
-        <h1>Huppsa Decks</h1>
+    <div class="inner card-wrap">
+        <div class="list-cards">
+            @foreach($cards as $card)
+                <div class="card" style='background-image:url("{{url('/storage/'.$card->image)}}")'>
+                    <h1>{{$card->name}}</h1>
+                </div>
+            @endforeach
+        </div>
     </div>
 </div>
 @endsection

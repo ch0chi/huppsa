@@ -43,10 +43,15 @@ class ManageCardController extends Controller
      */
     public function store(Request $request)
     {
+      try{
         $this->validate($request,[
-          'card_image' => 'image|mimes:jpeg,jpg,bmp,png,gif|max:999999',
+          'card_image' => 'image|mimes:jpeg,jpg,bmp,png,gif|max:9999999',
           'card_name' => 'required'
         ]);
+      }catch(Exception $e){
+        echo $e;
+      }
+
 
         $imgHandler = new Upload();
 

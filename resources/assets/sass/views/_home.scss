@@ -1,0 +1,9 @@
+.list-cards{
+  @include flexbox;
+  flex-direction:row;
+  justify-content: space-around;
+  width:calc(100vw/1.5);
+}
+.card-wrap{
+  width:100%;
+}

@@ -2,7 +2,9 @@
   @include flexbox;
   justify-content: center;
   align-items: center;
+  flex-direction:column;
   height:100vh;
+
 }
 %inner{
   @include flexbox;

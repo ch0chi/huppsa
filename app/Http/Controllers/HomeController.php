@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Card;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+      $card = new Card();
+      $cards = $card->getAll();
+      if(count($cards) > 0){
+        return view('home',compact('cards'));
+      }
         return view('home');
     }
 }
